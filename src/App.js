@@ -1,17 +1,17 @@
-import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
-import { increment } from "./actions";
-function App() {
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./routers";
+
+import "./App.scss";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>counter : {counter}</h1>
-        <button onClick={() => dispatch(increment(5))}>+</button>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        {/* <h1>hello world</h1> */}
+        <Router />
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
